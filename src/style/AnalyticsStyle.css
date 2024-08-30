@@ -1,0 +1,16 @@
+.analytics-container{
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh; 
+    overflow-y: auto;
+}
+.analytics-title{
+    color:#5076FF;
+    font-size: 50px;
+    text-align: center;
+}
+@media screen and (max-width: 480px) {
+    .analytics-title{
+        font-size: 30px;
+    }
+}

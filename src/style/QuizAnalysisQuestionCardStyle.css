@@ -1,0 +1,33 @@
+.quiz-question-containers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.quiz-question-card {
+    width: 250px;
+    height: 80px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-question-card h4 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 5px;
+
+}
+
+.quiz-question-card p {
+    font-size: 14px;
+    font-weight: bold;
+
+}

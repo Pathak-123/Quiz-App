@@ -1,0 +1,47 @@
+.quiz-analysis-container {
+    background-color: #EDEDED;
+
+    overflow-y: auto;
+    padding: 50px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.container-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.container-header h1 {
+    color: #5076FF;
+    font-size: 40px;
+    text-align: left;
+    margin-top: 0px;
+}
+
+.header-right-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.header-right-container p {
+    color: #FF5D01;
+    font-weight: bold;
+    margin: 0px;
+    padding-bottom: 5px;
+}
+
+.question-text {
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+}
+
+.question-container hr {
+    border: 1px solid #ddd;
+
+}

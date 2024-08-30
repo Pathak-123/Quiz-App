@@ -1,0 +1,98 @@
+.analytic-quiz-table {
+    width: calc(100% - 150px); 
+    border-collapse: separate; 
+    border-spacing: 0;
+    margin: 0px auto ; 
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  
+  .analytic-quiz-table th {
+    background-color: #5076FF; 
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    text-align: center;
+  }
+  
+  .analytic-quiz-table th:first-child {
+    border-top-left-radius: 10px; 
+  }
+  
+  .analytic-quiz-table th:last-child {
+    border-top-right-radius: 10px; 
+  }
+  
+  .analytic-quiz-table td {
+    padding: 12px 15px;
+    border: none;
+ 
+  }
+  
+  
+  .analytic-quiz-table tr:nth-child(even) td {
+    background-color: #B3C4FF; 
+    
+  }
+  
+  
+  .analytic-quiz-table tr:nth-child(even):first-child td:first-child {
+    border-top-left-radius: 10px; 
+  }
+  
+  .analytic-quiz-table tr:nth-child(even):first-child td:last-child {
+    border-top-right-radius: 10px; 
+  }
+  
+  .analytic-quiz-table tr:nth-child(even):last-child td:first-child {
+    border-bottom-left-radius: 10px; 
+  }
+  
+  .analytic-quiz-table tr:nth-child(even):last-child td:last-child {
+    border-bottom-right-radius: 10px; 
+  }
+  
+  .analytic-quiz-table tr:nth-child(odd) {
+    background-color: transparent; 
+  }
+  
+  .icons-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .edit-icon {
+    cursor: pointer;
+    color: #854CFF;
+  }
+  
+  .share-icon {
+    cursor: pointer;
+    color: #60B84B;
+  }
+  
+  .delete-icon {
+    cursor: pointer;
+    color: #D60000;
+  }
+  
+  .analysis-link {
+    color: black;
+    text-decoration: underline;
+  }
+  @media screen and (max-width: 480px) {
+    .analytic-quiz-table {
+      font-size: 10px;
+
+    }
+    .analytic-quiz-table th {
+      padding:10px;
+    }
+    .analytic-quiz-table td {
+      padding: 10px;
+      border: none;
+   
+    }
+  }

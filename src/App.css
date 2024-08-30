@@ -1,0 +1,157 @@
+body {
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Arial', sans-serif;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #F2F2F2;
+  ;
+}
+
+.login-popup-box {
+  width: 850px;
+  height: 510px;
+  background-color: white;
+  box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.15);
+  border-radius: 15px;
+  padding-bottom: 10px;
+}
+
+.title {
+  color: #474444;
+  font-size: 50px;
+  font-weight: 400px;
+  text-align: center;
+}
+
+.auth-toggle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.toggle-button {
+  color: #474444;
+  font-size: 20px;
+  font-weight: bold;
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.toggle-button.active {
+  box-shadow: 0px 0px 10px 0px #0019FF;
+  border-radius: 10px;
+}
+
+.title {
+  color: #474444;
+  font-size: 40px;
+  font-weight: 400px;
+  text-align: center;
+}
+
+.button {
+  color: #474444;
+  font-size: 20px;
+  width: 240px;
+  cursor: pointer;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: #A9BCFF;
+}
+
+.popup-title {
+  font-size: 28px;
+  text-align: center;
+  margin-top: 0px;
+}
+
+@media screen and (max-width: 768px) {
+
+
+  .button {
+    padding: 8px;
+    font-size: 16px;
+    width: 150px;
+  }
+
+  .login-popup-box {
+    width: 350px;
+    padding: 15px;
+    height: 400px;
+  }
+
+  .toggle-button {
+    margin-top: 0px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .login-title {
+    margin-top: 0px;
+    font-size: 35px;
+  }
+
+  .popup-title {
+    font-size: 20px;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  .button {
+    font-size: 14px;
+    width: 150px;
+  }
+
+  .login-popup-box {
+    width: 90%;
+    padding: 10px;
+
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .toggle-button {
+    font-size: 14px;
+    font-weight: bold;
+    height: 35px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 0px;
+  }
+
+  .popup-title {
+    font-size: 15px;
+  }
+}
