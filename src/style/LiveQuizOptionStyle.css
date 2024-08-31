@@ -76,7 +76,7 @@
   .options-container {
     flex-direction: row;
     gap: 20px;
-    max-height: 70%;
+    height: 70%;
   }
 
   .option {
@@ -100,7 +100,7 @@
 @media screen and (max-width: 768px) {
   .options-container {
     margin-bottom: 70px;
-    max-height:80%;
+    height:80%;
   }
 
 }

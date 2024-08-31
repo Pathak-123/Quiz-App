@@ -100,6 +100,10 @@
 }
 
 @media screen and (max-width: 768px) {
+    .live-quiz-container {
+        justify-content: flex-start;
+    
+    }
     .container h1 {
         font-size: 30px;
         text-align: center;
@@ -108,7 +112,7 @@
 
     }
     .options-button-container {
-        height:75%;
+        height:67%;
     }
 
     #popup-center-container {
@@ -155,6 +159,10 @@
 }
 
 @media screen and (max-width: 480px) {
+    .live-quiz-container {
+        justify-content: flex-start;
+    
+    }
     .container h1 {
         font-size: 30px;
         text-align: center;
