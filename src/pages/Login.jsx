@@ -164,6 +164,7 @@ function Login() {
               error={errors.password}
             />
             <button type="submit" className='button'>Login</button>
+            {loading && <div> <Loader /></div>}
 
           </form>
 
@@ -209,7 +210,7 @@ function Login() {
               error={errors.confirmPassword}
             />
             <button type="submit" className='button' >Sign-Up</button>
-            {loading && <div className="loader"> <Loader /> </div>}
+            {loading && <div> <Loader /> </div>}
 
           </form>
 
