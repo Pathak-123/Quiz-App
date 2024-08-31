@@ -52,10 +52,10 @@ catch (error) {
       }
       if (data.quiz.type === 'q&a') {
         setCurrentComponent(<QaQuizAnalysis quizId={quizId} data={data.quiz} />);
-        navigate(`/analytics/question-analysis`,{ state: { quizId, data: data.quiz } });
+        navigate(`/analytics/question-analysis`,{ state: { quizId} });
       } else if (data.quiz.type === 'poll') {
         setCurrentComponent(<PollQuizAnalysis quizId={quizId} data={data.quiz} />);
-        navigate(`/analytics/poll/question-analysis`,{ state: { quizId, data: data.quiz } });
+        navigate(`/analytics/poll/question-analysis`,{ state: { quizId } });
       }
      
     }
@@ -129,7 +129,7 @@ catch (error) {
         },
       },
       {
-        Header: '', // Empty header for icons
+        Header: '', 
         id: 'actions',
         Cell: ({ row }) => (
           <div className="icons-container">

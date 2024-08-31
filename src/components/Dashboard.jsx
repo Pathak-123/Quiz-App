@@ -5,6 +5,7 @@ import DashboardQuizCard from './shared/DashboardQuizCard';
 import TrendingQuizContainer from './TrendingQuizContainer';
 import { fetchDashboardData } from '../services/quizService';
 import { formatDate } from '../utils/helperFunction';
+import Loader from './Loader';
 function Dashboard() {
   const [quizStats, setQuizStats] = useState({
     totalQuizzes: 0,
@@ -12,6 +13,7 @@ function Dashboard() {
     totalImpressions: 0,
     trendingQuizzes: [],
   });
+  const [loading, setLoading] = useState(true);
   const formatTotalImpressions = (totalImpressionCount) => {
     return totalImpressionCount >= 1000 ? `${(totalImpressionCount / 1000).toFixed(1)}K` : totalImpressionCount;
   };
@@ -38,12 +40,22 @@ function Dashboard() {
       } catch (error) {
         console.error('Error fetching dashboard data:', error);
       }
+     finally {
+      setLoading(false); 
+    }
+      
     };
 
     loadDashboardData();
   }, []);
   const isNoData = quizStats.totalQuizzes === 0 && quizStats.totalQuestions === 0 && quizStats.totalImpressions === 0;
   const isNoTrendingQuizzes = quizStats.trendingQuizzes.length === 0 && !isNoData;
+
+  if (loading) {
+    return (
+     <Loader />
+    );
+  }
   return (
     <div className='dashboard-container'>
       {isNoData ? (

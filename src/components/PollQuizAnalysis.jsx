@@ -1,17 +1,41 @@
-import React from 'react'
+import  { useEffect, useState } from 'react'
 import QuizAnalysisHeader from './shared/QuizAnalysisHeader';
 import QuizAnalysisQuestionCard from './shared/QuizAnalysisQuestionCard';
 import PollOptionCard from './PollOptionCard';
 import '../style/PollAnalysisCardStyle.css';
 import { formatDate } from '../utils/helperFunction';
 import { useLocation } from 'react-router-dom';
+import { fetchQuizData } from '../services/quizService';
+import { toast } from 'react-toastify';
 
 function PollQuizAnalysis() {
+  const [data, setData] = useState([]);
   const location = useLocation();
-  const { data } = location.state || {};
+  const { quizId } = location.state || 0;
+  useEffect(()=>{
+
+    const fetchAnalysisData = async() => {
+      try{
+        const isdata = await fetchQuizData(quizId);
+        if(isdata.success){
+          setData(isdata.quiz);
+        }
+        else{
+          toast.error('Error while fetching. Please try again');
+        }
+      }
+      catch(error){
+        console.error('Error fetching quiz data:', error);
+      }
+    }
+    if (quizId) {
+      fetchAnalysisData();
+    }
+
+  },[]);
 
 
-  const questions = data.questions.map((question, index) => ({
+  const questions = data.questions?.map((question, index) => ({
 
     id: question._id,
     text: question.questionText,
@@ -21,7 +45,7 @@ function PollQuizAnalysis() {
       selectedCount: option.selectedCount,
     })),
 
-  }));
+  })) || [];
 
   return (
     <div className='quiz-analysis-container'>

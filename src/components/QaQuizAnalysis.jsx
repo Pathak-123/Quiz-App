@@ -1,21 +1,48 @@
-import React from 'react'
+import  {useEffect, useState } from 'react'
 import '../style/QuizQuestionAnalysisStyle.css'
 import QuizAnalysisHeader from './shared/QuizAnalysisHeader'
 import QuizAnalysisQuestionCard from './shared/QuizAnalysisQuestionCard';
 import { formatDate } from '../utils/helperFunction';
 import { useLocation } from 'react-router-dom';
-function QaQuizAnalysis() {
-  const location = useLocation();
-  const { data } = location.state || {};
+import { fetchQuizData } from '../services/quizService';
+import { toast } from 'react-toastify';
 
-  const questions = data.questions.map((question, index) => ({
+function QaQuizAnalysis() {
+  const [data, setData] = useState([]);
+  const location = useLocation();
+  const { quizId } = location.state || 0;
+
+  useEffect(()=>{
+
+    const fetchAnalysisData = async() => {
+      try{
+        const isdata = await fetchQuizData(quizId);
+        if(isdata.success){
+          setData(isdata.quiz);
+        }
+        else{
+          toast.error('Error while fetching. Please try again');
+        }
+      }
+      catch(error){
+        console.error('Error fetching quiz data:', error);
+      }
+    }
+    if (quizId) {
+      fetchAnalysisData();
+    }
+
+  },[]);
+
+
+  const questions = data.questions?.map((question, index) => ({
 
     id: question._id,
     text: question.questionText,
     impression: question.QuestionImpressions || 0,
     correctAnswer: question.correctAnswer || 0,
 
-  }));
+  })) || [];
 
 
   return (

@@ -8,15 +8,18 @@
   margin-bottom: 30px;
   margin-top: 10px;
   justify-content: space-between;
+  max-height: 250px;
+  overflow: auto;
 }
 
 .option {
   width: 200px;
-  height: 60px;
+  height: auto;
   background-color: #F0F0F0;
   border-radius: 10px;
   padding: 10px;
   align-content: center;
+  word-wrap: break-word;
 }
 
 .with-padding {
@@ -71,7 +74,9 @@
 
 @media screen and (max-width: 480px) {
   .options-container {
-    flex-direction: column;
+    flex-direction: row;
+    gap: 20px;
+    max-height: 70%;
   }
 
   .option {
@@ -95,6 +100,7 @@
 @media screen and (max-width: 768px) {
   .options-container {
     margin-bottom: 70px;
+    max-height:80%;
   }
 
 }
