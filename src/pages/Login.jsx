@@ -8,6 +8,8 @@ import Formfield from '../components/FormField';
 import '../style/FormStyle.css'
 import { loginUser, registerUser } from '../services/userService';
 
+import Loader from '../components/Loader';
+
 
 function Login() {
   const navigate = useNavigate();
@@ -24,6 +26,7 @@ function Login() {
 
   });
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
   const handleToggle = () => {
     setIsLogin(!isLogin)
     if (isLogin) {
@@ -81,6 +84,7 @@ function Login() {
       return;
     }
     setErrors({});
+    setLoading(true); 
     try {
       const response = await loginUser(loginFormData);
       localStorage.setItem('token', response.token);
@@ -88,6 +92,9 @@ function Login() {
       navigate('/dashboard');
     } catch (error) {
       toast.error(error);
+    }
+    finally {
+      setLoading(false); 
     }
 
   };
@@ -100,6 +107,7 @@ function Login() {
       return;
     }
     setErrors({});
+    setLoading(true);
 
     try {
       const response = await registerUser(signUpFormData);
@@ -108,6 +116,9 @@ function Login() {
       setSignUpFormData({ email: '', password: '', name: '', confirmPassword: '' });
     } catch (error) {
       toast.error(error);
+    }
+    finally {
+      setLoading(false); 
     }
 
   };
@@ -198,6 +209,7 @@ function Login() {
               error={errors.confirmPassword}
             />
             <button type="submit" className='button' >Sign-Up</button>
+            {loading && <div className="loader"> <Loader /> </div>}
 
           </form>
 
