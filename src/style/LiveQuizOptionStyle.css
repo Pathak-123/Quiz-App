@@ -23,12 +23,13 @@
 }
 
 .with-padding {
-  padding: 10px;
+  padding: 5px;
 }
 
 .no-padding {
   padding: 0;
-  height: 100px
+  /* height: 100px */
+  background-color: transparent;
 }
 
 .option p {
@@ -40,7 +41,7 @@
 
 .option img {
   width: 200px;
-  height: 100px;
+  height: 85px;
   border-radius: 10px;
 }
 
@@ -75,8 +76,8 @@
 @media screen and (max-width: 480px) {
   .options-container {
     flex-direction: row;
-    gap: 20px;
-    height: 70%;
+    gap: 15px;
+    max-height: 70%;
   }
 
   .option {
