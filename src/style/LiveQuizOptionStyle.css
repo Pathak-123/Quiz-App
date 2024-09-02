@@ -23,7 +23,7 @@
 }
 
 .with-padding {
-  padding: 5px;
+  padding: 10px;
 }
 
 .no-padding {
@@ -102,7 +102,7 @@
 @media screen and (max-width: 768px) {
   .options-container {
     margin-bottom: 70px;
-    height:80%;
+    /* height:80%; */
   }
 
 }
